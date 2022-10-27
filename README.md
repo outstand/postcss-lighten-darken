@@ -4,15 +4,34 @@
 
 [PostCSS]: https://github.com/postcss/postcss
 
+Basic usage:
 ```css
 .foo {
-  /* Input example */
+  td { background: lighten(#5E6469, 57%); }
+  background: darken(#f0f0f0, 15%);
 }
 ```
 
 ```css
 .foo {
-  /* Output example */
+  td { background: hsla(207, 6%, 96%, 1); }
+  background: hsla(0, 0%, 79%, 1);
+}
+```
+
+Nested usage (w/ postcss-simple-vars):
+```css
+$primary-color: #5E6469;
+$table-stripe-color: lighten($primary-color, 57%);
+
+.foo {
+  td { background: darken($table-stripe-color, 3%); }
+}
+```
+
+```css
+.foo {
+  td { background: hsla(207, 6%, 93%, 1); }
 }
 ```
 
@@ -24,14 +43,7 @@
 npm install --save-dev postcss postcss-lighten-darken
 ```
 
-**Step 2:** Check you project for existed PostCSS config: `postcss.config.js`
-in the project root, `"postcss"` section in `package.json`
-or `postcss` in bundle config.
-
-If you do not use PostCSS, add it according to [official docs]
-and set this plugin in settings.
-
-**Step 3:** Add the plugin to plugins list:
+**Step 2:** Add the plugin to plugins list:
 
 ```diff
 module.exports = {
