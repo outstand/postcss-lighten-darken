@@ -1,12 +1,17 @@
 {
   "name": "postcss-lighten-darken",
-  "version": "0.0.0",
+  "version": "0.9.0",
   "description": "PostCSS plugin to add sass-style lighten/darken",
-  "keywords": ["postcss", "css", "postcss-plugin", "postcss-lighten-darken"],
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "postcss-lighten-darken"
+  ],
   "scripts": {
     "test": "jest --coverage && eslint ."
   },
-  "author": "Ryan Schlesinger <ryan@ryanschlesinger.com>",
+  "author": "Ryan Schlesinger <ryan@outstand.com>",
   "license": "MIT",
   "repository": "outstand/postcss-lighten-darken",
   "engines": {
@@ -17,10 +22,12 @@
   },
   "devDependencies": {
     "clean-publish": "^3.4.2",
+    "dedent": "^0.7.0",
     "eslint": "^8.0.1",
     "eslint-plugin-jest": "^25.2.2",
     "jest": "^27.3.1",
-    "postcss": "^8.3.11"
+    "postcss": "^8.3.11",
+    "postcss-simple-vars": "^7.0.0"
   },
   "eslintConfig": {
     "parserOptions": {
@@ -30,7 +37,10 @@
       "node": true,
       "es6": true
     },
-    "extends": ["eslint:recommended", "plugin:jest/recommended"],
+    "extends": [
+      "eslint:recommended",
+      "plugin:jest/recommended"
+    ],
     "rules": {
       "jest/expect-expect": "off"
     }
@@ -41,5 +51,9 @@
         "statements": 100
       }
     }
+  },
+  "dependencies": {
+    "loglevel": "^1.8.0",
+    "postcss-value-parser": "^4.2.0"
   }
 }
